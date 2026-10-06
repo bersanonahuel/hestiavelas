@@ -1,0 +1,68 @@
+[
+  {
+    "name": "CACA",
+    "description": "",
+    "category": "Velas Aromáticas",
+    "price": 1,
+    "stock": 10,
+    "imageUrl": "",
+    "featured": false,
+    "id": "prod-1791257829070",
+    "createdAt": "2026-10-06T03:37:09.070Z"
+  },
+  {
+    "id": "prod-1",
+    "name": "Vela Cera de Soja - Jazmín & Vainilla",
+    "description": "Vela artesanal en vaso de vidrio reutilizable con flores secas.",
+    "category": "Velas Aromáticas",
+    "price": 15500,
+    "stock": 12,
+    "imageUrl": "/uploads/1791257034244-fun_stem_logo-01.png",
+    "featured": true,
+    "createdAt": "2026-10-06T03:02:54.481Z"
+  },
+  {
+    "id": "prod-2",
+    "name": "Difusor de Ambientes - Naranja & Canela",
+    "description": "Difusor mikado de 250ml con varillas de ratán de alta absorción.",
+    "category": "Difusores & Varillas",
+    "price": 18000,
+    "stock": 8,
+    "imageUrl": "/uploads/1791257749809-seimandi.png",
+    "featured": true,
+    "createdAt": "2026-10-06T03:02:54.481Z"
+  },
+  {
+    "id": "prod-3",
+    "name": "Home Spray Textil - Lavanda Serena",
+    "description": "Aromatizador textil de 500ml para ropa de cama y cortinas.",
+    "category": "Home Spray",
+    "price": 12500,
+    "stock": 20,
+    "imageUrl": "/uploads/1791257807502-seimandi.png",
+    "featured": true,
+    "createdAt": "2026-10-06T03:02:54.481Z"
+  },
+  {
+    "id": "prod-4",
+    "name": "Apagavelas Clásico Acero Dorado",
+    "description": "Accesorio sofisticado de acero inoxidable color oro antiguo.",
+    "category": "Accesorios & Apagavelas",
+    "price": 9500,
+    "stock": 5,
+    "imageUrl": "/placeholder-accessory.png",
+    "featured": false,
+    "createdAt": "2026-10-06T03:02:54.481Z"
+  },
+  {
+    "id": "prod-5",
+    "name": "Box Regalo Hestia Ritual",
+    "description": "Incluye 1 vela aromática, 1 home spray y apagavelas de regalo en caja premium.",
+    "category": "Sets & Regalos",
+    "price": 38000,
+    "stock": 4,
+    "imageUrl": "/placeholder-box.png",
+    "featured": true,
+    "createdAt": "2026-10-06T03:02:54.481Z"
+  }
+]
