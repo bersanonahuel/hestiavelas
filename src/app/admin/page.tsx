@@ -39,7 +39,7 @@ const CATEGORIES: ProductCategory[] = [
 export default function AdminPage() {
   // Auth State
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
-  const [loginUser, setLoginUser] = useState("Malena");
+  const [loginUser, setLoginUser] = useState("");
   const [loginPass, setLoginPass] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [loginError, setLoginError] = useState("");

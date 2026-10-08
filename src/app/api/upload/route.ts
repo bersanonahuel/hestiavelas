@@ -1,9 +1,15 @@
 import { NextResponse } from "next/server";
+import { cookies } from "next/headers";
 import fs from "fs/promises";
 import path from "path";
 
 export async function POST(request: Request) {
   try {
+    const cookieStore = await cookies();
+    if (cookieStore.get("hestia_admin_auth")?.value !== "true") {
+      return NextResponse.json({ error: "No autorizado" }, { status: 401 });
+    }
+
     const formData = await request.formData();
     const file = formData.get("file") as File | null;
 

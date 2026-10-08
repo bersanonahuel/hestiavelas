@@ -173,6 +173,10 @@ export async function incrementMetric(type: "pageViews" | "whatsappClicks"): Pro
   const metrics = await getMetrics();
   metrics[type] = (metrics[type] || 0) + 1;
   metrics.lastUpdated = new Date().toISOString();
-  await fs.writeFile(METRICS_FILE, JSON.stringify(metrics, null, 2), "utf-8");
+  try {
+    await fs.writeFile(METRICS_FILE, JSON.stringify(metrics, null, 2), "utf-8");
+  } catch {
+    // Entorno serverless de solo lectura (como Vercel)
+  }
   return metrics;
 }

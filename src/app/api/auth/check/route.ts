@@ -6,7 +6,10 @@ export async function GET() {
   const authCookie = cookieStore.get("hestia_admin_auth");
 
   if (authCookie?.value === "true") {
-    return NextResponse.json({ authenticated: true, user: "Malena" });
+    return NextResponse.json({
+      authenticated: true,
+      user: process.env.ADMIN_USER || "Malena",
+    });
   }
 
   return NextResponse.json({ authenticated: false }, { status: 401 });

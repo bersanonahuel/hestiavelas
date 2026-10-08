@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { cookies } from "next/headers";
 import { getProducts, addProduct } from "@/lib/db";
 
 export async function GET() {
@@ -12,6 +13,11 @@ export async function GET() {
 
 export async function POST(request: Request) {
   try {
+    const cookieStore = await cookies();
+    if (cookieStore.get("hestia_admin_auth")?.value !== "true") {
+      return NextResponse.json({ error: "No autorizado" }, { status: 401 });
+    }
+
     const body = await request.json();
     const { name, description, category, price, stock, imageUrl, featured } = body;
 

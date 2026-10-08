@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { cookies } from "next/headers";
 import { updateProduct, deleteProduct } from "@/lib/db";
 
 export async function PUT(
@@ -6,6 +7,11 @@ export async function PUT(
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const cookieStore = await cookies();
+    if (cookieStore.get("hestia_admin_auth")?.value !== "true") {
+      return NextResponse.json({ error: "No autorizado" }, { status: 401 });
+    }
+
     const { id } = await params;
     const body = await request.json();
     
@@ -31,6 +37,11 @@ export async function DELETE(
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const cookieStore = await cookies();
+    if (cookieStore.get("hestia_admin_auth")?.value !== "true") {
+      return NextResponse.json({ error: "No autorizado" }, { status: 401 });
+    }
+
     const { id } = await params;
     const success = await deleteProduct(id);
     if (!success) {

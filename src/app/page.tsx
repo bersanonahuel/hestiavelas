@@ -10,6 +10,7 @@ export const dynamic = "force-dynamic";
 
 export default async function Home() {
   const products = await getProducts();
+  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "5491100000000";
   
   try {
     await incrementMetric("pageViews");
@@ -96,7 +97,7 @@ export default async function Home() {
               Explorar Colección
             </a>
             <a 
-              href="https://wa.me/5491100000000?text=Hola%20Hestia,%20quisiera%20hacer%20una%20consulta"
+              href={`https://wa.me/${whatsappNumber}?text=Hola%20Hestia,%20quisiera%20hacer%20una%20consulta`}
               target="_blank"
               rel="noopener noreferrer"
               className="border border-primary/25 text-primary px-8 py-4 rounded-full uppercase tracking-[0.2em] text-xs font-semibold hover:bg-primary/5 transition-all duration-300 cursor-pointer"
@@ -175,7 +176,7 @@ export default async function Home() {
           </p>
           <div className="flex gap-8 text-[11px] uppercase tracking-[0.2em] mb-10 text-white/80">
             <a href="#catalogo" className="hover:text-accent transition-colors">Catálogo</a>
-            <a href="https://wa.me/5491100000000" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">WhatsApp</a>
+            <a href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">WhatsApp</a>
             <Link href="/admin" className="hover:text-accent transition-colors">Administración</Link>
           </div>
           <div className="border-t border-white/10 w-full pt-8 text-[11px] text-white/40">

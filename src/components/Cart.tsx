@@ -41,7 +41,7 @@ export default function Cart() {
     });
     message += `\n*Total estimado: $${getCartTotal().toLocaleString()}*\n\n¿Podríamos coordinar el envío y método de pago? ¡Muchas gracias!`;
     
-    const whatsappNumber = "5491100000000"; // Número del cliente
+    const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "5491100000000";
     const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
   };
